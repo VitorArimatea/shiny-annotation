@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Shiny Annotation",
@@ -12,8 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="pt-br">
+        <body>
+          <Header />
+          <div className="h-screen flex">
+            <Sidebar />
+            <div className="flex-1 p-4 bg-gray-100 overflow-y-auto">
+              {children}
+            </div>
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

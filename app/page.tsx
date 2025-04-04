@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <div>
-      <h1>Vamos construir uma ferramenta com IA para produtividade</h1>
-
-      <Button>Click me</Button>
+      <h1>
+        Esse daqui será o espaço principal, onde o usuário vai editar da forma que quiser.
+      </h1>
     </div>
   );
 }
